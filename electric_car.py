@@ -1,5 +1,5 @@
 class Car():
-    '''a simulation for a car'''
+    '''a simulation for a car, adding a son class -- electric car'''
     
     def __init__(self, make, model, year):
         self.make = make
