@@ -28,11 +28,13 @@ class Battery():
             range = 240
         elif self.battery_size == 85:
             range = 270
-            
+                
         message = "This car can go approximately " + str(range)
         message += " miles on full charge."
         print(message)
-    
+    def upgrade_battery(self):
+        if self.battery_size != 85:
+            self.battery_size = 85
 
 class ElectricCar(Car):
     '''a heritate class from Car'''
@@ -50,5 +52,9 @@ class ElectricCar(Car):
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 print(my_tesla.get_descriptive_name())
 #my_tesla.describe_battry()
+my_tesla.battery.describe_battry()
+my_tesla.battery.get_range()
+print("--------Upgranded range--------")
+my_tesla.battery.upgrade_battery()
 my_tesla.battery.describe_battry()
 my_tesla.battery.get_range()
