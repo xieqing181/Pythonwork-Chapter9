@@ -27,13 +27,13 @@ class Restaurant():
 '''def an new son-class icecreamstand'''
 
 class IceCreamStand(Restaurant):
-	def __init__(self, restaurant_name, cuisine_type, open_time, flavors):
+	def __init__(self, restaurant_name, cuisine_type, open_time, *flavors):
 		super().__init__(restaurant_name, cuisine_type, open_time)
 		self.flavors = flavors
 		
 	def print_flavors(self):
-		
-		print("We " + self.name.title() + " have " + self.flavors.title() + " flavors Icecreams here!")
+		for flavor in self.flavors:
+			print("We " + self.name.title() + " have " + flavor.title() + " flavors Icecreams here!")
 		
 	
 '''def function to print out Restaurant infomation'''
@@ -75,7 +75,7 @@ print_number_increment(her_restaurant)
 
 
 '''Create a example to get icecream favors print out'''
-icecream_restaurant = IceCreamStand('Mojito', 'Italien', '10am - 12pm', 'honey')
-icecream_restaurant.print_flavors()
-print_restaurant(icecream_restaurant)
+icecream_restaurant = IceCreamStand('Mojito', 'Italien', '10am - 12pm', 'honey', 'nuts')
 
+print_restaurant(icecream_restaurant)
+icecream_restaurant.print_flavors()
